@@ -129,7 +129,7 @@ body {
 }
 
 
-// Post Index 
+// Post Index
 // --------------------------------------------------
 #post-index {
 	#main {
@@ -151,6 +151,7 @@ body {
 		@include border-radius(3px);
 		margin-bottom: 20px;
 		padding: 25px 15px;
+
 		@media #{$medium} {
 			padding: 30px;
 		}
@@ -185,7 +186,7 @@ body {
 .socialcount {
 	@include font-rem($socialcount_fs);
 	font-weight: 700;
-	li { 
+	li {
 		padding-left: 10px;
 		padding-right: 10px;
 	}

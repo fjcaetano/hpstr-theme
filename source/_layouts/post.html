@@ -1,3 +1,5 @@
+{% capture titlecased %}{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
+
 {% include doctype.html %}
 <head>
 {% include head.html %}
@@ -22,9 +24,9 @@
     <header class="header-title">
       <div class="header-title-wrap">
         {% if page.external_url %}
-          <h1 class="entry-title"><a href="{{ page.external_url }}">{{ page.title }}</a></h1>
+          <h1 class="entry-title"><a href="{{ page.external_url }}">{{ titlecased }}</a></h1>
         {% else %}
-          <h1 class="entry-title"><a href="{{ root_url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
+          <h1 class="entry-title"><a href="{{ root_url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ titlecased }}</a></h1>
         {% endif %}
         <h2>{{ page.date | date: "%B %d, %Y" }}</h2>
       </div><!-- /.header-title-wrap -->
@@ -76,8 +78,8 @@
   </footer>
 </div><!-- /.footer-wrapper -->
 
-{% include custom/after_footer.html %}	        
-{% include scripts.html %}	        
+{% include custom/after_footer.html %}
+{% include scripts.html %}
 
 </body>
 </html>
